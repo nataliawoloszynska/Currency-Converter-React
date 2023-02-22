@@ -36,7 +36,7 @@ const App = () => {
   };
 
   const calculate = () => {
-    if (inputValue < 0 || inputValue == 0) {
+    if (inputValue < 0 || inputValue === 0) {
       setIsNegative("Kwota musi być wartością dodatnią");
       setResult("");
       return isNegative;
