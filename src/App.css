@@ -91,6 +91,15 @@ select {
   justify-content: space-around;
 }
 
+.statement {
+  display: flex;
+  justify-content: center;
+}
+
+.none-display {
+  display: none;
+}
+
 /* Media Queries */
 @media screen and (min-width: 530px) {
   .currency-settings-container {
