@@ -8,10 +8,10 @@ import Button from "./components/Button";
 import Result from "./components/Result";
 
 const App = () => {
-  const [option, setOption] = useState("");
+  const [option, setOption] = useState("EUR");
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState(0);
-  const [isNegative, setIsNegative] = useState("");
+  const [isNegative, setIsNegative] = useState(false);
 
   const getData = () => {
     fetch("https://api.nbp.pl/api/exchangerates/tables/A?format=json")
@@ -37,11 +37,11 @@ const App = () => {
 
   const calculate = () => {
     if (inputValue < 0 || inputValue === 0) {
-      setIsNegative("Kwota musi być wartością dodatnią");
+      setIsNegative(true);
       setResult("");
       return isNegative;
     } else {
-      setIsNegative("");
+      setIsNegative(false);
       getData();
     }
   };
